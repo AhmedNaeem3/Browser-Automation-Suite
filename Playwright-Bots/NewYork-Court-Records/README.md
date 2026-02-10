@@ -49,9 +49,9 @@ google-chrome --remote-debugging-port=9222
 
 ## 📂 Data Output
 All extracted data is saved to scraped_data.csv with the following schema:
-• County
-• File Number
-• Proceeding Type
-• Estate Attorney
-• Estate Attorney Firm
+* County
+* File Number
+* Proceeding Type
+* Estate Attorney
+* Estate Attorney Firm
 
