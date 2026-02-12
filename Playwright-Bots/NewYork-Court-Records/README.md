@@ -9,6 +9,8 @@ The New York Court system employs complex filters and session-based navigation. 
 3.  **Bypassing** result limits by automatically generating and searching through granular monthly date ranges.
 4.  **Deep-scraping** individual file records to extract attorney names and law firm details.
 
+--- 
+
 ## 🛠 Technical Features:
 
 * **CDP (Chrome DevTools Protocol) Integration**: Designed to connect to an existing Chrome instance, allowing for better session persistence and reduced detection.
@@ -21,6 +23,8 @@ The New York Court system employs complex filters and session-based navigation. 
 * **Data Normalization**: Uses `BeautifulSoup4` with custom CSS selectors and string-matching logic to handle inconsistent HTML structures.
 * **Automated CSV Persistence**: Features an append-mode saving system that handles header creation and ensures data is safe even if the script is interrupted.
 
+---
+
 ## 📋 Prerequisites:
 Before running the scraper, ensure you have the following installed:
 * **Python 3.8+**
@@ -28,17 +32,23 @@ Before running the scraper, ensure you have the following installed:
 * **BeautifulSoup4** 
 * **Python-Dateutil**
 
+
 ### 1. Installation
 Install all dependencies using your requirements file:
 ```bash
 pip install -r requirements.txt
 ```
 
-### Browser Setup:
-The script requires a Chrome instance running with remote debugging enabled.
+---
+
+## ⚙️ Setup & Execution
+
+### 1. Launch Chrome in Debugging Mode
+You **must** launch your browser with this command before starting the script. This creates the bridge the script needs to bypass Cloudflare.
+
+**MacOS:**
 ```bash
-# Launch Chrome with CDP enabled 
-google-chrome --remote-debugging-port=9222 
+/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --remote-debugging-port=9222 --user-data-dir="~/chrome_profile"
 ```
 
 ## ⚙️ Configuration:
@@ -47,11 +57,11 @@ google-chrome --remote-debugging-port=9222
 * Target Year: Currently configured for 2024. To change the year, update the target_year variable in the run() method.
 * Proceeding Types: Hardcoded to scrape PROBATE & PRELIMINARY PETITIONS and ADMINISTRATION PETITION.
 
-## 📂 Data Output
-All extracted data is saved to scraped_data.csv with the following schema:
-* County
-* File Number
-* Proceeding Type
-* Estate Attorney
-* Estate Attorney Firm
+---
 
+## 📂 Data Output
+
+* Scraped Data of Attorneys
+This is the initial data extracted from the court portal. It includes the County, File Number, Proceeding Type, and the Attorney and Attorney Firm names.
+
+![Attorneys Scraped Data CSV Output Preview](./assets/newyork_scraped_data.png)
