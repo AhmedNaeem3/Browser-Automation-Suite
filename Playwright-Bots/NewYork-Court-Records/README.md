@@ -1,5 +1,9 @@
 # New York State Court Web Surrogate Scraper
+
+**Target Portal:** [New York Unified Court System - Attorney File Search](https://websurrogates.nycourts.gov/File/FileSearch)
 A high-performance, resilient web automation tool built with **Python**, **Playwright**, and **BeautifulSoup4**. This scraper is engineered to navigate the New York State Unified Court System to extract detailed attorney and proceeding information from probate and administration records.
+
+--- 
 
 ## 🚀 Overview:
 
